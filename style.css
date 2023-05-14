@@ -1,0 +1,35 @@
+body{
+    margin:0;
+    padding:0;
+    background: url(./images/@Wallpaper_4K3D\ \(1357\).jpg);
+    background-size: cover;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    gap: 30px;
+}
+
+.input{
+    width: 15rem;
+    height: 3rem;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.563);
+    color: white;
+}
+.button{
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: rgba(128, 128, 128, 0.563);
+    color: white;
+    text-align: center;
+    width: 4rem;
+}
+.input::placeholder{
+    color: white;
+}
