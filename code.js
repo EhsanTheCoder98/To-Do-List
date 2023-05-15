@@ -9,9 +9,32 @@ function consoleShow(e){
     let value = input.value;
     if(value!==""){
         console.log(value);
+        const divToDo = document.createElement("div");
+        divToDo.classList.add("contain")
+        
         const li = document.createElement("li");
         li.innerHTML=value;
-        ul.appendChild(li);
+
+        const checkButton = document.createElement("button");
+        checkButton.innerHTML="<i class='fas fa-check'></i>";
+        checkButton.classList.add("check")
+
+        const trashButton = document.createElement("button");
+        trashButton.innerHTML="<i class='fas fa-trash'></i>";
+        trashButton.classList.add("trash");
+
+        li.addEventListener("click",function(){
+            checkButton.classList.toggle("bol");
+            trashButton.classList.toggle("bol");
+        });
+
+        divToDo.appendChild(li);
+        divToDo.appendChild(checkButton);
+        divToDo.appendChild(trashButton);
+        ul.appendChild(divToDo);
         input.value = "";
     }
 }
+
+
+

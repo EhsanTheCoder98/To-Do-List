@@ -3,6 +3,7 @@ body{
     padding:0;
     background: url(./images/@Wallpaper_4K3D\ \(1357\).jpg);
     background-size: cover;
+    direction: ltr;
 }
 
 .form{
@@ -41,16 +42,62 @@ body{
     background-color: rgba(255, 255, 255, 0.541);
     color: black;
     font-size: 2rem;
-    width: 30%;
+    width: 600px;
     height: 50px;
-    margin: 10px auto;
+    margin:20px 0;
     list-style: none;
     box-sizing: border-box;
     padding:3px 10px 2px 15px;
     border-radius: 20px;
     user-select: none;
+    text-align: center;
 }
 .todo-list li:hover{
     background-color:rgba(255, 255, 255, 0.666) ;
+    cursor: default;
+}
+.contain{
+    width: 100%;
+    height: auto;
+    animation: opacControler 2s ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check,
+.trash{
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.541);
+    border-radius: 20px;
+    display: none;
+    animation: leftToRight 1s;
     cursor: pointer;
+}
+.bol{
+    display: block;
+}
+
+
+
+
+@keyframes opacControler {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes leftToRight {
+    0%{
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
