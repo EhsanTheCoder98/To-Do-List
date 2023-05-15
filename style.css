@@ -29,7 +29,28 @@ body{
     color: white;
     text-align: center;
     width: 4rem;
+    margin-left: 10px;
 }
 .input::placeholder{
     color: white;
+}
+.todo-container{
+    height: auto;
+}
+.todo-list li{
+    background-color: rgba(255, 255, 255, 0.541);
+    color: black;
+    font-size: 2rem;
+    width: 30%;
+    height: 50px;
+    margin: 10px auto;
+    list-style: none;
+    box-sizing: border-box;
+    padding:3px 10px 2px 15px;
+    border-radius: 20px;
+    user-select: none;
+}
+.todo-list li:hover{
+    background-color:rgba(255, 255, 255, 0.666) ;
+    cursor: pointer;
 }
