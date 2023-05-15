@@ -28,6 +28,16 @@ function consoleShow(e){
             trashButton.classList.toggle("bol");
         });
 
+        checkButton.addEventListener("click",(e)=>{
+            e.preventDefault();
+            li.classList.toggle("lined");
+        })
+
+        trashButton.addEventListener("click",(e)=>{
+            e.preventDefault();
+            divToDo.remove();
+        })
+
         divToDo.appendChild(li);
         divToDo.appendChild(checkButton);
         divToDo.appendChild(trashButton);
