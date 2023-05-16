@@ -2,7 +2,8 @@ const input = document.querySelector(".input");
 const button = document.querySelector(".button");
 const ul = document.querySelector(".todo-list");
 
-button.addEventListener("click",consoleShow)
+button.addEventListener("click",consoleShow);
+document.addEventListener("DOMContentLoaded",getTheTasks);
 
 function consoleShow(e){
     e.preventDefault()
@@ -46,6 +47,7 @@ function consoleShow(e){
         divToDo.appendChild(trashButton);
         ul.appendChild(divToDo);
         input.value = "";
+        return li;
     }
 }
 
@@ -71,3 +73,49 @@ function deleteLocal(todo){
     localStorage.setItem("tasks",JSON.stringify(todos));
 }
     
+function getTheTasks(){
+    let todos;
+    if(localStorage.getItem("tasks") === null){
+        todos = [];
+    }else{
+        todos = JSON.parse(localStorage.getItem("tasks"));
+    }
+
+    todos.forEach((todo)=>{
+        const divToDo = document.createElement("div");
+        divToDo.classList.add("contain")
+        
+        const li = document.createElement("li");
+        li.innerHTML=todo;
+
+        const checkButton = document.createElement("button");
+        checkButton.innerHTML="<i class='fas fa-check'></i>";
+        checkButton.classList.add("check")
+
+        const trashButton = document.createElement("button");
+        trashButton.innerHTML="<i class='fas fa-trash'></i>";
+        trashButton.classList.add("trash");
+
+        li.addEventListener("click",function(){
+            checkButton.classList.toggle("bol");
+            trashButton.classList.toggle("bol");
+        });
+
+        checkButton.addEventListener("click",(e)=>{
+            e.preventDefault();
+            li.classList.toggle("lined");
+        })
+
+        trashButton.addEventListener("click",(e)=>{
+            e.preventDefault();
+            divToDo.remove();
+            deleteLocal();
+        })
+
+        divToDo.appendChild(li);
+        divToDo.appendChild(checkButton);
+        divToDo.appendChild(trashButton);
+        ul.appendChild(divToDo);
+        input.value = "";
+    });
+}
