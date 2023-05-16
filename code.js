@@ -38,6 +38,7 @@ function consoleShow(e){
         trashButton.addEventListener("click",(e)=>{
             e.preventDefault();
             divToDo.remove();
+            deleteLocal();
         })
 
         divToDo.appendChild(li);
@@ -56,6 +57,17 @@ function saveToLocal(todo){
         todos = JSON.parse(localStorage.getItem("tasks"));
     }
     todos.push(todo);
+    localStorage.setItem("tasks",JSON.stringify(todos));
+}
+
+function deleteLocal(todo){
+    let todos;
+    if(localStorage.getItem("tasks") === null){
+        todos = [];
+    }else{
+        todos = JSON.parse(localStorage.getItem("tasks"));
+    }
+    todos.splice(todo,1);
     localStorage.setItem("tasks",JSON.stringify(todos));
 }
     
