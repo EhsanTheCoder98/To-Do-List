@@ -23,6 +23,8 @@ function consoleShow(e){
         trashButton.innerHTML="<i class='fas fa-trash'></i>";
         trashButton.classList.add("trash");
 
+        saveToLocal(value);
+
         li.addEventListener("click",function(){
             checkButton.classList.toggle("bol");
             trashButton.classList.toggle("bol");
@@ -46,5 +48,14 @@ function consoleShow(e){
     }
 }
 
-
-
+function saveToLocal(todo){
+    let todos;
+    if(localStorage.getItem("tasks") === null){
+        todos = [];
+    }else{
+        todos = JSON.parse(localStorage.getItem("tasks"));
+    }
+    todos.push(todo);
+    localStorage.setItem("tasks",JSON.stringify(todos));
+}
+    
