@@ -1,8 +1,12 @@
 body{
+    font-family:cursive;
+    font-style:oblique;
+    font-weight: 550;
     margin:0;
     padding:0;
-    background: url(./images/@Wallpaper_4K3D\ \(1357\).jpg);
-    background-size: cover;
+    background: url(./images/Todo.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
     direction: ltr;
 }
 
@@ -20,13 +24,14 @@ body{
     border: none;
     outline: none;
     text-align: center;
-    background-color: rgba(128, 128, 128, 0.563);
+    background-color: rgba(128, 128, 128, 0.626);
     color: white;
 }
 .button{
+    border: none;
     border-radius: 6px;
     cursor: pointer;
-    background-color: rgba(128, 128, 128, 0.563);
+    background-color: rgba(128, 128, 128, 0.626);
     color: white;
     text-align: center;
     width: 4rem;
@@ -54,7 +59,7 @@ body{
 }
 .todo-list li:hover{
     background-color:rgba(255, 255, 255, 0.666) ;
-    cursor: default;
+    cursor: pointer;
 }
 .contain{
     width: 100%;
@@ -74,6 +79,7 @@ body{
     display: none;
     animation: leftToRight 1s;
     cursor: pointer;
+    border: none;
 }
 .bol{
     display: block;
